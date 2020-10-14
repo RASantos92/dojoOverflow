@@ -40,6 +40,10 @@ public class Tag {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updatedAt;
 
+	public Tag() {
+
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -50,6 +54,10 @@ public class Tag {
 
 	public String getTag() {
 		return tag;
+	}
+
+	public Tag(String tag) {
+		this.tag = tag;
 	}
 
 	public void setTag(String tag) {

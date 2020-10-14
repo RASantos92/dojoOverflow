@@ -17,6 +17,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -42,6 +43,16 @@ public class Question {
 	private Date createdAt;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date updatedAt;
+	@Transient
+	private String tagInput;
+
+	public String getTagInput() {
+		return tagInput;
+	}
+
+	public void setTagInput(String tagInput) {
+		this.tagInput = tagInput;
+	}
 
 	public Long getId() {
 		return id;

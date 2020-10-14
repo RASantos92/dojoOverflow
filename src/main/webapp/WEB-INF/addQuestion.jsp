@@ -22,21 +22,21 @@
 <body style="background-color: gray">
 	<div class="container">
 		<div class="col mx-auto text-center">
-			<h1>Question Dashboard</h1>
-				<table
-					class="table table-secondary table-striped table-hover">
-					<tr>
-						<th>Question</th>
-						<th>Tags</th>
-					</tr>
-					<c:forEach items="${questions}" var="question">
-						<tr>
-							<td><a href="/question/show/${question.id}">${question.question}</a></td>
-							<td>${question.tags}</td>
-						</tr>
-					</c:forEach>
-				</table>
+			<h1>Add a Question</h1>
+			<form:form action="/question/new" method="post"
+				modelAttribute="newQuestionPlus" style="margin-top: 50px">
+				<div class="form-group">
+					<form:input path="question" class="form-control text-center" placeholder="Question" />
+					<form:errors path="question" class="text-danger" />
+				</div>
+				<div class="form-group">
+					<form:input path="tagInput" class="form-control text-center" placeholder="Tags" />
+					<form:errors path="tagInput" class="text-danger" />
+				</div>
+				<input type="submit" value="Add Artist"
+					class="btn btn-sm btn-dark" />
+			</form:form>
+				
 		</div>
-		<a href="/new/question" class="btn btn-light btn-outline-dark">Add a Question</a>
 	</div>
 </body>
