@@ -102,6 +102,17 @@ public class Question {
 		this.tags = tags;
 	}
 
+	public String tagDescription() {
+		String result = "";
+		for (int i = 0; i < tags.size(); i++) {
+			result += tags.get(i).getTag();
+			if (i < tags.size() - 1) {
+				result += ", ";
+			}
+		}
+		return result;
+	}
+
 	@PrePersist
 	protected void onCreate() {
 		this.createdAt = new Date();

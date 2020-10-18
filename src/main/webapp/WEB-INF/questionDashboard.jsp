@@ -32,7 +32,7 @@
 					<c:forEach items="${questions}" var="question">
 						<tr>
 							<td><a href="/question/show/${question.id}">${question.question}</a></td>
-							<td>${question.tags}</td>
+							<td>${question.tagDescription()}</td>
 						</tr>
 					</c:forEach>
 				</table>
